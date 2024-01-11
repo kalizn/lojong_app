@@ -1,0 +1,47 @@
+name: lojong_app
+description: "Aplicação flutter de teste para vaga de Desenvolvedor da Lojong"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  flutter_svg:
+  dio:
+  dio_cache_interceptor:
+  flutter_html:
+  cached_network_image:
+  chucker_flutter:
+  wakelock:
+  provider:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets\fonts\inter\Inter-Black.ttf
+        - asset: assets\fonts\inter\Inter-Bold.ttf
+          weight: 700
+        - asset: assets\fonts\inter\Inter-Light.ttf
+          weight: 300
