@@ -1,6 +1,6 @@
 # lojong_app
 
-A new Flutter project.
+Aplicação flutter de teste para vaga de Desenvolvedor da Lojong
 
 ## Getting Started
 
