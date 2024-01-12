@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'services/connection.dart';
 import 'utils/routes.dart';
 import 'utils/theme.dart';
+import 'viewmodels/home/home.video.viewmodel.dart';
 import 'views/splash/splash.view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeVideoViewModel(connection: Connection())),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

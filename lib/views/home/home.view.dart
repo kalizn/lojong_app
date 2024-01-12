@@ -1,14 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../viewmodels/home.viewmodel.dart';
+import '../../utils/constants.dart';
+import '../../viewmodels/home/home.video.viewmodel.dart';
+import '../../viewmodels/home/home.viewmodel.dart';
+import 'components/video_content.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   static String routeName = '/home';
 
-  final HomeViewModel viewModel = HomeViewModel();
+  const HomeView({super.key});
 
-  HomeView({super.key});
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
+  late HomeViewModel viewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel = HomeViewModel(
+      vsync: this,
+      onTabSelectionChanged: () {
+        setState(() {});
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +36,12 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('INSPIRAÇÕES'),
-          backgroundColor: const Color(0xFFCC8899),
+          backgroundColor: kPrimaryColor,
           leading: Container(
             margin: const EdgeInsets.all(8.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xFF996666),
+              color: kSecondaryColor,
             ),
             child: IconButton(
               icon: const Icon(
@@ -51,7 +70,8 @@ class HomeView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 tabs: [
-                  for (var tab in viewModel.tabs) _buildTab(tab.title),
+                  for (var tab in viewModel.tabs)
+                    _buildTab(tab.title, tab.index),
                 ],
               ),
             ),
@@ -59,8 +79,9 @@ class HomeView extends StatelessWidget {
         ),
         body: TabBarView(
           controller: viewModel.tabController,
-          children: const [
-            Center(child: Text('Home Content')),
+          children: [
+            // Use Provider para obter a instância de HomeVideoViewModel
+            VideoContent(viewModel: Provider.of<HomeVideoViewModel>(context)),
             Center(child: Text('Favorites Content')),
             Center(child: Text('Profile Content')),
           ],
@@ -69,16 +90,16 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Widget _buildTab(String text) {
-    final isSelected = viewModel.tabs.any((tab) => tab.title == text) &&
-        viewModel.tabs.indexOf(viewModel.tabs.firstWhere((tab) => tab.title == text)) ==
-            viewModel.tabController.index;
+  Widget _buildTab(String text, int index) {
+    final isSelected = index == viewModel.tabController.index;
 
     return Tab(
       child: Text(
         text,
         style: TextStyle(
-          color: isSelected ? viewModel.selectedTabColor : viewModel.unselectedTabColor,
+          color: isSelected
+              ? viewModel.selectedTabColor
+              : viewModel.unselectedTabColor,
           fontWeight: FontWeight.bold,
         ),
       ),
