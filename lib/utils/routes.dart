@@ -5,5 +5,5 @@ import '../views/splash/splash.view.dart';
 
 final Map<String, WidgetBuilder> routes = {
   SplashView.routeName: (context) => const SplashView(),
-  HomeView.routeName: (context) =>  HomeView()
+  HomeView.routeName: (context) =>  const HomeView()
 };

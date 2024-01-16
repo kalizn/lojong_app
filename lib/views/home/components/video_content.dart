@@ -1,27 +1,110 @@
 import 'package:flutter/material.dart';
-import '../../../viewmodels/home/home.video.viewmodel.dart';
+import 'package:share/share.dart';
 
-class VideoContent extends StatelessWidget {
-  final HomeVideoViewModel viewModel;
+import '../../../models/home/video.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/share.dart';
+import 'video_player.dart';
 
-  const VideoContent({required this.viewModel, Key? key}) : super(key: key);
+class CardVideo extends StatelessWidget {
+  final Video data;
+
+  CardVideo({
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final params = {"page": 1};
-
-    return FutureBuilder(
-      future: viewModel.loadData('videos', params),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        } else if (snapshot.hasError) {
-          print(snapshot.error);
-          return Text('Erro: ${snapshot.error}');
-        } else {
-          return Center(child: Text('Dados do Vídeo: ${snapshot.data}'));
-        }
-      },
+    String titleShare = 'Confira esse vídeo incrível da Lojong:';
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Text(
+              data.name.toUpperCase(),
+              style: const TextStyle(
+                color: Color.fromRGBO(139, 143, 153, 1),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                color: Colors.black,
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image.network(
+                    data.imageUrl, // You can use a thumbnail URL if available
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.play_circle_fill,
+                  size: 50.0,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  _openWebView(context, data.url, data.name);
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Center(
+            child: Text(
+              data.description,
+              style: const TextStyle(
+                color: kTextDescription,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: () {
+                shareVideo(context, titleShare,data.url, data.name);
+              },
+              icon: const Icon(Icons.share, color: kIconsShare),
+              label: const Text(
+                'Compartilhar',
+                style: TextStyle(
+                  color: kIconsShare,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kButtonShare,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          const Divider(
+            color: Colors.grey,
+            thickness: 0.5,
+          ),
+        ],
+      ),
     );
   }
+
+  void _openWebView(BuildContext context, String url, String title) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => WebViewPage(url: url, title:  title,),
+    ));
+  }
 }
+
+

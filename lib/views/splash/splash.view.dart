@@ -74,7 +74,7 @@ class _SplashViewState extends State<SplashView> {
                             width: currentPage == index ? 20 : 6,
                             decoration: BoxDecoration(
                               color: currentPage == index
-                                  ? kPrimaryColor
+                                  ? kButtonShare
                                   : const Color(0xFFD8D8D8),
                               borderRadius: BorderRadius.circular(3),
                             ),

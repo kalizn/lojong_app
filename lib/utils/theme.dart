@@ -8,7 +8,7 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.white,
       fontFamily: "Inter",
       appBarTheme: const AppBarTheme(
-          color: Colors.white,
+          color: kPrimaryColor,
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(
@@ -32,7 +32,7 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          backgroundColor: kPrimaryColor,
+          backgroundColor: kButtonShare,
           foregroundColor: Colors.white,
           minimumSize: const Size(double.infinity, 48),
           shape: const RoundedRectangleBorder(
