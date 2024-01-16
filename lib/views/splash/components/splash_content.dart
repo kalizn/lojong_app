@@ -24,7 +24,7 @@ class _SplashContentState extends State<SplashContent> {
           "K4LIZN",
           style: TextStyle(
             fontSize: 32,
-            color: kPrimaryColor,
+            color: kButtonShare,
             fontWeight: FontWeight.bold,
           ),
         ),

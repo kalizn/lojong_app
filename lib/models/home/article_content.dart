@@ -7,9 +7,12 @@ class ArticleContent {
   final String url;
   final int premium;
   final int order;
-  final String fullText;
+  late String fullText;
+  late String authorImage;
+  late String authorDescription;
+  final String image;
 
-  const ArticleContent({
+  ArticleContent({
     required this.id,
     required this.text,
     required this.title,
@@ -19,6 +22,9 @@ class ArticleContent {
     required this.premium,
     required this.order,
     required this.fullText,
+    required this.authorImage,
+    required this.authorDescription,
+    required this.image,
   });
 
   factory ArticleContent.fromJson(Map<String, dynamic> json) {
@@ -32,6 +38,11 @@ class ArticleContent {
       premium: json['premium'] ?? 0,
       order: json['order'] ?? 0,
       fullText: json['full_text'] ?? '',
+      authorImage: json['author_image'] ?? '',
+      authorDescription: json['author_description'] ?? '',
+      image: json['image'] ?? '',
     );
   }
+
 }
+

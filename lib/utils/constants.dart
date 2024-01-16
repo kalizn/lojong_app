@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFFCC8899);
+const kButtonShare = Color(0xFFB4B8C2);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
 );
-const kSecondaryColor = Color(0xFF996666);
-const kTextColor = Colors.black;
-
+const kPrimaryColor = Color(0xFFE09090);
+const kSecondaryColor = Color(0xFFC78080);
+const kTextColor = Colors.white;
+const kTextDescription = Color(0xFF8A8A8A);
+const kIconsShare = Color(0xFF515357);
 const kAnimationDuration = Duration(milliseconds: 200);
 
 const headingStyle = TextStyle(
@@ -35,4 +37,9 @@ OutlineInputBorder outlineInputBorder() {
   );
 }
 
-
+/// ** Artigos
+const Color titleColor = Color(0xFF8B8F99);
+const Color textColor = Color(0xFF868A94);
+const Color buttonIconColor = Color(0xFF515357);
+const Color buttonTextColor = Color(0xFF515357);
+const Color buttonBackgroundColor = kButtonShare;
