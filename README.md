@@ -2,6 +2,15 @@
 
 Aplicação flutter de teste para vaga de Desenvolvedor da Lojong
 
+## Atenção
+<details>
+  <h1>Build</h1>
+  <p>Como eu uso variáveis de ambiente, se utilizar android studio, pode adicionar a configuração dela em: Run > Edit Configurations... > Additional run args</p>
+  <p>Só colocar esse comando aqui: --dart-define-from-file=env.local.json</p>
+  <p>ou pode dar build direto colocando o código junto ao build</p>
+  <p>E por ser um projeto de teste, deixei o arquivo junto e não será preciso enviar pelo e-mail</p>
+</details>
+
 ## Prints da Tela
 <details>
   <summary>Nexus One - API 21</summary>
