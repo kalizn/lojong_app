@@ -20,7 +20,7 @@ class HomeViewModel extends ChangeNotifier {
 
   @override
   void notifyListeners() {
-    notifyListeners();
+    super.notifyListeners();
   }
 
   HomeViewModel({int? articleId}) {

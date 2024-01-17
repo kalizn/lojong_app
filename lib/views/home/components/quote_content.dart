@@ -4,19 +4,20 @@ import '../../../models/home/quotes2_content.dart';
 import '../../../utils/share.dart';
 
 class QuotesPage extends StatelessWidget {
-  final List<Quotes2Content> quotes;
+  static String routeName = '/quotesPage';
+  final List<Quotes2Content>? quotes;
 
-  const QuotesPage({super.key, required this.quotes});
+  const QuotesPage({super.key, this.quotes});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.separated(
-        itemCount: quotes.length,
+        itemCount: quotes!.length,
         itemBuilder: (context, index) {
           int cardIndex = index % 3;
           return QuoteCard(
-            quote: quotes[index],
+            quote: quotes![index],
             cardIndex: cardIndex,
           );
         },
@@ -31,7 +32,7 @@ class QuoteCard extends StatelessWidget {
   final Quotes2Content quote;
   final int cardIndex;
 
-  QuoteCard({required this.quote, required this.cardIndex});
+  const QuoteCard({super.key, required this.quote, required this.cardIndex});
 
   @override
   Widget build(BuildContext context) {

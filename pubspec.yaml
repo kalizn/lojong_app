@@ -23,7 +23,7 @@ dependencies:
   wakelock:
   provider:
   connectivity_plus:
-  webview_flutter:
+  webview_flutter: ^2.0.14
   path_provider:
   share:
 
@@ -40,7 +40,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/icons/
 
   fonts:
     - family: Inter

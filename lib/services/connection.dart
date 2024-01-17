@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../models/home/article_content.dart';
 import '../models/home/articles2.dart';
-import '../models/home/quotes2.dart';
 import '../models/home/quotes2_content.dart';
 import '../models/home/video.dart';
 import '../models/services_connection_env/services_connection_env.dart';
@@ -26,6 +26,7 @@ class Connection {
     _dio = Dio();
     _dio.options.baseUrl = _urlBase;
     _dio.options.headers = getDefaultHeaders();
+    _dio.interceptors.add(ChuckerDioInterceptor());
 
     _cacheManager = CacheManager(
       Config(
