@@ -2,15 +2,28 @@
 
 Aplicação flutter de teste para vaga de Desenvolvedor da Lojong
 
-## Getting Started
+## Prints da Tela
+<details>
+  <summary>Nexus One - API 21</summary>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/NexusOne-API21-Error%20Message.png" name='nexus one error messase'>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/NexusOne-API21-Loading.png" name='nexus one loading'>
+</details>
 
-This project is a starting point for a Flutter application.
+<details>
+  <summary>Nexus 4 - API 30</summary>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus4-API30%20-%20WebView%20Videos.png" name='nexus 4 webview videos'>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus4-API30-Article%20Content%20Finish.png" name='nexus 4 article content finish'>
+</details>
 
-A few resources to get you started if this is your first Flutter project:
+<details>
+  <summary>Nexus 6 - API 30</summary>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus6-API30-%20Articles%20List.png" name='nexus 6 articles list'>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus6-API30-Article%20Content%20Finish%20with%20Image%20Autor.png" name='nexus 6 article content finish with image autor'>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus6-API30-Videos%20Tab.png" name='nexus 6 videos tab'>
+</details>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<details>
+  <summary>Nexus 9 - API 30</summary>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus9-API30-%20Article%20Content.png" name='nexus 9 article content'>
+  <img src="https://github.com/kalizn/lojong_app/blob/bf2e19148f2c574369651af8da7684663f7eb314/prints/Nexus9-API30-Quotes%20List.png" name='nexus 9 quotes list'>
+</details>
