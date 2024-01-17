@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lojong_app/viewmodels/home/home.viewmodel.dart';
 import 'package:provider/provider.dart';
 import '../../utils/constants.dart';
+import '../../viewmodels/home/home.viewmodel.dart';
 import 'components/article_content.dart';
 import 'components/quote_content.dart';
 import 'components/video_content.dart';
@@ -12,10 +12,10 @@ class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
   @override
-  _HomeViewState createState() => _HomeViewState();
+  HomeViewState createState() => HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView>  {
+class HomeViewState extends State<HomeView>  {
   int _currentIndex = 0;
   late PageController _pageController;
 
@@ -110,7 +110,7 @@ class _HomeViewState extends State<HomeView>  {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight * 0.9),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 8),
             child: Container(
               decoration: BoxDecoration(
                 color: kSecondaryColor,

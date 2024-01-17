@@ -1,3 +1,5 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/constants.dart';
@@ -33,6 +35,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    bool isReleaseMode = kReleaseMode;
+
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -57,7 +61,7 @@ class _SplashViewState extends State<SplashView> {
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
@@ -88,6 +92,8 @@ class _SplashViewState extends State<SplashView> {
                         },
                         child: const Text('Continuar'),
                       ),
+                      const SizedBox(height: 2,),
+                      (isReleaseMode ? Container() : ChuckerFlutter.chuckerButton),
                       const Spacer(),
                     ],
                   ),

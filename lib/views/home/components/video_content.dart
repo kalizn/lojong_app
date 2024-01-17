@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
 
 import '../../../models/home/video.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/share.dart';
-import 'video_player.dart';
+import 'web_view_page.dart';
 
 class CardVideo extends StatelessWidget {
   final Video data;
 
-  CardVideo({
+  const CardVideo({super.key,
     required this.data,
   });
 

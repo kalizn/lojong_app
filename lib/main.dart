@@ -1,3 +1,4 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:lojong_app/viewmodels/home/home.viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        navigatorObservers: [ChuckerFlutter.navigatorObserver],
         title: 'Lojong App',
         theme: AppTheme.lightTheme(context),
         initialRoute: SplashView.routeName,
